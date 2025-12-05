@@ -1,0 +1,43 @@
+deadlines = []
+habits = ["Review notes", "Read for 20 minutes", "Practice solving exercises"]
+
+def add_deadline():
+    task = input("\nEnter the activity or homework: ")
+    date = input("Enter the deadline (Example: Dec 12): ")
+    deadlines.append((task, date))
+    print("\nDeadline added.")
+
+def view_deadlines():
+    if not deadlines:
+        print("\nNo deadlines added yet.")
+    else:
+        print("\nUpcoming Deadlines:")
+        for task, date in deadlines:
+            print(f"  • {task} — due on {date}")
+
+def show_habits():
+    print("\nStudy Habit Reminders:")
+    for habit in habits:
+        print(f"  - {habit}")
+
+def main():
+    while True:
+        print("\n---- STUDY PLANNER JOURNAL ----")
+        print("[1] Add a deadline")
+        print("[2] View deadlines")
+        print("[3] Show study habits")
+        print("[4] Exit")
+
+        choice = input("Choose an option: ")
+
+        if choice == "1":
+            add_deadline()
+        elif choice == "2":
+            view_deadlines()
+        elif choice == "3":
+            show_habits()
+        elif choice == "4":
+            print("\nGood luck with your studies.")
+            break
+        else:
+            print("\nInvalid choice, try again.")
