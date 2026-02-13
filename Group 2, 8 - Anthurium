@@ -1,6 +1,10 @@
 deadlines = []
 habits = ["Review notes", "Read for 20 minutes", "Practice solving exercises"]
 
+break_interval = "Every 60 minutes"
+exercise_reminder = "Exercise at 5:00 PM"
+sleep_reminder = "Sleep at 10:30 PM"
+
 def add_deadline():
     task = input("\nEnter the activity or homework: ")
     date = input("Enter the deadline (Example: Dec 12): ")
@@ -20,13 +24,20 @@ def show_habits():
     for habit in habits:
         print(f"  - {habit}")
 
+def show_wellness():
+    print("\nWellness Reminders:")
+    print("Take a short break", break_interval)
+    print(exercise_reminder)
+    print(sleep_reminder)
+
 def main():
     while True:
         print("\n---- STUDY PLANNER JOURNAL ----")
         print("[1] Add a deadline")
         print("[2] View deadlines")
         print("[3] Show study habits")
-        print("[4] Exit")
+        print("[4] Show wellness reminders")
+        print("[5] Exit")
 
         choice = input("Choose an option: ")
 
@@ -37,7 +48,10 @@ def main():
         elif choice == "3":
             show_habits()
         elif choice == "4":
+            show_wellness()
+        elif choice == "5":
             print("\nGood luck with your studies.")
             break
         else:
             print("\nInvalid choice, try again.")
+
