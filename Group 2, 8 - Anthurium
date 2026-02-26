@@ -1,17 +1,17 @@
-deadlines = []
-habits = ["Review notes", "Read for 20 minutes", "Practice solving exercises"]
+deadlines = [] #sets an empty lists for deadlines
+habits = ["Review notes", "Read for 20 minutes", "Practice solving exercises"]  
 
-break_interval = "Every 60 minutes"
-exercise_reminder = "Exercise at 5:00 PM"
-sleep_reminder = "Sleep at 10:30 PM"
+break_interval = "Every 60 minutes"  #sets a variable for break interval 
+exercise_reminder = "Exercise at 5:00 PM" #sets a variable for exercise reminder
+sleep_reminder = "Sleep at 10:30 PM" #sets variable for sleep reminder
 
-def add_deadline():
-    task = input("\nEnter the activity or homework: ")
+def add_deadline(): #sets a function for adding a deadline
+    task = input("\nEnter the activity or homework: ")   
     date = input("Enter the deadline (Example: Dec 12): ")
     deadlines.append((task, date))
     print("\nDeadline added.")
 
-def view_deadlines():
+def view_deadlines():  #sets a function that views the deadlines
     if not deadlines:
         print("\nNo deadlines added yet.")
     else:
@@ -19,12 +19,12 @@ def view_deadlines():
         for task, date in deadlines:
             print(f"  • {task} — due on {date}")
 
-def show_habits():
+def show_habits():   #sets a function of study habits
     print("\nStudy Habit Reminders:")
     for habit in habits:
         print(f"  - {habit}")
 
-def show_wellness():
+def show_wellness(): #sets a function about taking a break
     print("\nWellness Reminders:")
     print("Take a short break", break_interval)
     print(exercise_reminder)
