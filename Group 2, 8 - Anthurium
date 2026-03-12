@@ -1,6 +1,8 @@
 deadlines = [] 
 habits = ["Review notes", "Read for 20 minutes", "Practice solving exercises"]  
 
+todo_list = []
+
 break_interval = "Every 60 minutes"  
 exercise_reminder = "Exercise at 5:00 PM" 
 sleep_reminder = "Sleep at 10:30 PM" 
@@ -30,6 +32,19 @@ def show_wellness():
     print(exercise_reminder)
     print(sleep_reminder)
 
+def add_todo():
+    task = input("\nEnter a task for your to-do list: ")
+    todo_list.append(task)
+    print("\nTask added to your to-do list.")
+
+def view_todo():
+    if not todo_list:
+        print("\nYour to-do list is empty.")
+    else:
+        print("\nYour To-Do List:")
+        for task in todo_list:
+            print(f"  • {task}")
+
 def main():
     while True:
         print("\n---- STUDY PLANNER JOURNAL ----")
@@ -37,7 +52,9 @@ def main():
         print("[2] View deadlines")
         print("[3] Show study habits")
         print("[4] Show wellness reminders")
-        print("[5] Exit")
+        print("[5] Add to-do task")
+        print("[6] View to-do list")
+        print("[7] Exit")
 
         choice = input("Choose an option: ")
 
@@ -50,6 +67,10 @@ def main():
         elif choice == "4":
             show_wellness()
         elif choice == "5":
+            add_todo()
+        elif choice == "6":
+            view_todo()
+        elif choice == "7":
             print("\nGood luck with your studies.")
             break
         else:
