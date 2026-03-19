@@ -45,7 +45,7 @@ def view_todo():
         for i, task in enumerate(todo_list, 1):
             print(f"{i}. {task}")
 
-def main():
+def panel_options():
     while True:
         print("\n---- STUDY PLANNER JOURNAL ----")
         print("[1] Add a deadline")
@@ -77,4 +77,4 @@ def main():
             print("\nInvalid choice, try again.")
 
 if __name__ == "__main__":
-    main()
+    panel_options()
